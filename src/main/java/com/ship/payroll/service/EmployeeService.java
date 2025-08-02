@@ -29,12 +29,11 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Employee updateEmployee(String id, Employee employee) {
-        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+    public Employee updateEmployee(Employee employee) {
+        Optional<Employee> optionalEmployee = employeeRepository.findById(employee.getId());
 
         if(optionalEmployee.isPresent()) {
-            // update the employee
-            return null;
+            return employeeRepository.save(employee);
         } else {
             return null;
         }
