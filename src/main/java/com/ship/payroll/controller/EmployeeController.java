@@ -16,6 +16,7 @@ class EmployeeController {
 
     @GetMapping("/employees")
     public Iterable<Employee> getEmployees() {
+        // sample API
         return employeeService.getAllEmployees();
     }
 }
