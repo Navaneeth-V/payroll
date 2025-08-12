@@ -1,7 +1,7 @@
-package com.ship.payroll.service;
+package com.employee.payroll.service;
 
-import com.ship.payroll.model.Employee;
-import com.ship.payroll.repository.EmployeeRepository;
+import com.employee.payroll.model.Employee;
+import com.employee.payroll.repository.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class EmployeeService {
 
     @Transactional
     public Employee updateEmployee(Employee employee) {
-        Optional<Employee> optionalEmployee = employeeRepository.findById(employee.getId());
+        Optional<Employee> optionalEmployee = employeeRepository.findById(String.valueOf(employee.getId()));
 
         if(optionalEmployee.isPresent()) {
             return employeeRepository.save(employee);

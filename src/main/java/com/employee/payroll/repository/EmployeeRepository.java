@@ -1,6 +1,6 @@
-package com.ship.payroll.repository;
+package com.employee.payroll.repository;
 
-import com.ship.payroll.model.Employee;
+import com.employee.payroll.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

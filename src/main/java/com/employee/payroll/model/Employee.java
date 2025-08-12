@@ -1,4 +1,4 @@
-package com.ship.payroll.model;
+package com.employee.payroll.model;
 
 import jakarta.persistence.*;
 
@@ -9,7 +9,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private String id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -17,13 +17,19 @@ public class Employee {
     @Column(name = "salary")
     private double salary;
 
+    @Column(name = "department")
+    private String department;
+
+    @Column(name = "designation")
+    private String designation;
+
     @Column(name = "departmentId")
     private String departmentId;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getName() {
@@ -40,5 +46,17 @@ public class Employee {
     }
     public String getDepartmentId() {
         return departmentId;
+    }
+    public String getDepartment() {
+        return department;
+    }
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    public String getDesignation() {
+        return designation;
+    }
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 }

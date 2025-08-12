@@ -1,4 +1,4 @@
-package com.ship.payroll.exception;
+package com.employee.payroll.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
