@@ -14,6 +14,11 @@ class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @GetMapping()
+    public ResponseEntity<String> SayHello() {
+        return ResponseEntity.ok("Employee server is running...");
+    }
+
     @GetMapping("/employees")
     public Iterable<Employee> getEmployees() {
         return employeeService.getAllEmployees();
