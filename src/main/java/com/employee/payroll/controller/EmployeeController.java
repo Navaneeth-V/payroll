@@ -19,28 +19,28 @@ class EmployeeController {
         return ResponseEntity.ok("Employee server is running...");
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/getAll")
     public Iterable<Employee> getEmployees() {
         return employeeService.getAllEmployees();
     }
 
-    @GetMapping("/employee/{id}")
+    @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable String id) {
         return employeeService.getEmployeeById(id);
     }
 
-    @PostMapping("/employee")
+    @PostMapping("/add")
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
 
-    @PutMapping("/employee/{id}")
+    @PutMapping("/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         employee.setId(id);
         return employeeService.updateEmployee(employee);
     }
 
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteEmployeeById(@PathVariable String id) {
         employeeService.deleteEmployeeById(id);
         return ResponseEntity.status(HttpStatus.OK).build();
