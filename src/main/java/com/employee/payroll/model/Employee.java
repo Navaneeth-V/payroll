@@ -1,6 +1,10 @@
 package com.employee.payroll.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "employee")
@@ -12,18 +16,23 @@ public class Employee {
     private Long id;
 
     @Column(name = "name")
+    @NotEmpty(message = "Name cannot be empty")
     private String name;
 
     @Column(name = "salary")
+    @Min(value = 10000, message = "Salary cannot be less than 10000")
     private double salary;
 
     @Column(name = "department")
+    @NotBlank(message = "Department cannot be empty")
     private String department;
 
     @Column(name = "designation")
+    @NotNull(message = "Designation cannot be empty")
     private String designation;
 
     @Column(name = "departmentId")
+    @NotBlank(message = "Department Id cannot be empty")
     private String departmentId;
 
     public Long getId() {
