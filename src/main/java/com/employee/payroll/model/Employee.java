@@ -56,6 +56,9 @@ public class Employee {
     public String getDepartmentId() {
         return departmentId;
     }
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
     public String getDepartment() {
         return department;
     }
